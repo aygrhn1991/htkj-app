@@ -1,5 +1,7 @@
 {
   "name": "htkj-app",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
