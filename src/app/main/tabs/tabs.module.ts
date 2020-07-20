@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TabsPage } from './tabs.page';
 import { Routes, RouterModule } from '@angular/router';
+import { GuardService } from 'src/app/services/guard.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'tabs', pathMatch: 'full' },
@@ -12,8 +13,8 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', loadChildren: () => import('../home/home.module').then(m => m.HomeModule) },
-      { path: 'user', loadChildren: () => import('../user/user.module').then(m => m.UserModule) },
+      { path: 'home', loadChildren: () => import('../home/home.module').then(m => m.HomeModule), canActivate: [GuardService] },
+      { path: 'user', loadChildren: () => import('../user/user.module').then(m => m.UserModule), canActivate: [GuardService] },
     ]
   },
 ];
@@ -27,4 +28,4 @@ const routes: Routes = [
   ],
   declarations: [TabsPage]
 })
-export class TabsPageModule {}
+export class TabsPageModule { }

@@ -14,7 +14,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    CenterComponent
+    CenterComponent,
+    SettingComponent
   ],
   imports: [
     IonicModule,
