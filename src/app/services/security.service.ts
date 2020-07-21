@@ -1,29 +1,36 @@
 import { Injectable } from '@angular/core';
 import { UserModel } from '../models/user.model';
 import { UtilService } from './util.service';
-import { VehModel } from '../models/veh.model';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Result } from '../models/result.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SecurityService {
 
-  currentUser: UserModel = new UserModel();
-  currentVeh: VehModel = new VehModel();
+  constructor(private util: UtilService,
+    private http: HttpClient) {
+    if (!this.util.isNull(localStorage.getItem('access_token'))) {
+      this.getUser().subscribe((data: Result) => {
+        this.makeUser(data.data);
+      });
+    }
+  }
 
-  constructor(private util: UtilService) {
-    let userObj = localStorage.getItem('user');
-    if (!this.util.isNull(userObj)) {
-      this.currentUser = JSON.parse(userObj);
-    } else {
-      this.currentUser = null;
-    }
-    let vehObj = localStorage.getItem('veh');
-    if (!this.util.isNull(vehObj)) {
-      this.currentVeh = JSON.parse(vehObj);
-    } else {
-      this.currentVeh = null;
-    }
+  getUser(): Observable<Object> {
+    return this.http.get(`/user.json`);
+  }
+
+  makeUser(data: any): void {
+    //数据映射
+    let user = new UserModel();
+    user.id = data.id;
+    user.name = data.name;
+    user.phone = data.phone;
+    //存储&设置当前登录用户
+    localStorage.setItem('access_user', JSON.stringify(user));
   }
 
 }

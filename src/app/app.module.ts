@@ -28,7 +28,7 @@ const routes: Routes = [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    { provide: 'API_URL', useValue: 'https://wx2.fenglingtime.com/api' },
+    { provide: 'API_URL', useValue: '/htkjapp' },
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }
   ],
   bootstrap: [
