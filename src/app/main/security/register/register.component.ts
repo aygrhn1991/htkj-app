@@ -25,8 +25,7 @@ export class RegisterComponent implements OnInit {
     private util: UtilService,
     private toast: ToastService,
     private http: HttpClient,
-    private securityService: SecurityService,
-    private vehService: VehService) { }
+    private securityService: SecurityService) { }
 
   ngOnInit() { }
 
