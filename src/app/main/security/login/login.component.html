@@ -1,3 +1,32 @@
-<p>
-  login works!
-</p>
+<ion-header>
+    <ion-toolbar>
+        <ion-title>登录</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12">
+                <ion-item>
+                    <ion-icon name="phone-portrait"></ion-icon>
+                    <ion-input [(ngModel)]="user.phone" placeholder="手机号"></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col size="12">
+                <ion-item>
+                    <ion-icon name="unlock"></ion-icon>
+                    <ion-input [(ngModel)]="user.code" placeholder="验证码"></ion-input>
+                    <ion-button fill="outline" (click)="sendPhoneCode()" [disabled]="seconds>0">发送验证码{{secondsMsg}}</ion-button>
+                </ion-item>
+            </ion-col>
+            <ion-col size="12">
+                <ion-button expand="block" (click)="login()">登录</ion-button>
+            </ion-col>
+            <ion-col size="12" style="text-align: center;">
+                <ion-label color="primary" [routerLink]="['/login/register']">注册</ion-label>
+            </ion-col>
+            <div>{{_code}}</div>
+        </ion-row>
+    </ion-grid>
+</ion-content>

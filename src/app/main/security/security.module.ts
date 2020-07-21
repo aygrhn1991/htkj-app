@@ -15,7 +15,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    LoginComponent,
+    RegisterComponent,
+    BindComponent,
+  ],
   imports: [
     IonicModule,
     FormsModule,
