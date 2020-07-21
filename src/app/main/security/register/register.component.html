@@ -3,11 +3,11 @@
     <div class="login-form">
         <div class="login-form-item">
             <ion-icon name="phone-portrait-outline"></ion-icon>
-            <input type="text" [(ngModel)]="user.phone" placeholder="手机号">
+            <input type="tel" [(ngModel)]="user.phone" placeholder="手机号">
         </div>
         <div class="login-form-item">
             <ion-icon name="lock-closed-outline"></ion-icon>
-            <input type="text" [(ngModel)]="user.code" placeholder="验证码">
+            <input type="tel" [(ngModel)]="user.code" placeholder="验证码">
             <button class="login-code-btn" (click)="sendPhoneCode()" [disabled]="seconds>0">发送验证码{{secondsMsg}}</button>
         </div>
         <div class="login-form-item">
