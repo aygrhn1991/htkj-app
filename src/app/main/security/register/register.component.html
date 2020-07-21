@@ -14,7 +14,9 @@
             <button class="login-btn" (click)="register()">注册</button>
         </div>
         <div class="login-goto">
-            <label><input type="checkbox" [(ngModel)]="user.agreement">阅读并同意</label>《<span routerLink="/security/agreement">航天科技云终端用户服务协议</span>》{{_code}} </div>
+            <label><input type="checkbox" [(ngModel)]="user.agreement">阅读并同意</label>《<span routerLink="/security/agreement">航天科技云终端用户服务协议</span>》
+        </div>
+        <div class="login-goto"><label routerLink="/security/login">返回登录{{_code}}</label></div>
         <div class="login-footer">航天科技控股集团股份有限公司</div>
     </div>
 </div>
