@@ -1,3 +1,20 @@
-<p>
-  register works!
-</p>
+<div class="login">
+    <div class="login-logo"></div>
+    <div class="login-form">
+        <div class="login-form-item">
+            <ion-icon name="phone-portrait-outline"></ion-icon>
+            <input type="text" [(ngModel)]="user.phone" placeholder="手机号">
+        </div>
+        <div class="login-form-item">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <input type="text" [(ngModel)]="user.code" placeholder="验证码">
+            <button class="login-code-btn" (click)="sendPhoneCode()" [disabled]="seconds>0">发送验证码{{secondsMsg}}</button>
+        </div>
+        <div class="login-form-item">
+            <button class="login-btn" (click)="register()">注册</button>
+        </div>
+        <div class="login-goto">
+            <label><input type="checkbox" [(ngModel)]="user.agreement">阅读并同意</label>《<span routerLink="/security/agreement">航天科技云终端用户服务协议</span>》{{_code}} </div>
+        <div class="login-footer">航天科技控股集团股份有限公司</div>
+    </div>
+</div>

@@ -6,12 +6,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { BindComponent } from './bind/bind.component';
+import { GuardService } from 'src/app/services/guard.service';
+import { AgreementComponent } from './agreement/agreement.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login' },
-  { path: 'login', component: LoginComponent, },
-  { path: 'register', component: RegisterComponent, },
-  { path: 'bind', component: BindComponent, }
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'agreement', component: AgreementComponent },
+  { path: 'bind', component: BindComponent, canActivate: [GuardService] },
 ];
 
 @NgModule({
@@ -19,6 +22,7 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     BindComponent,
+    AgreementComponent,
   ],
   imports: [
     IonicModule,

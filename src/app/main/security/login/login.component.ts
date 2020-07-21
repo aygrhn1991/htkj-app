@@ -56,14 +56,17 @@ export class LoginComponent implements OnInit {
     }
     if (this._phone == this.user.phone && this._code == this.user.code) {
       this.http.get(`/r.json`).subscribe((data: Result) => {
-        localStorage.setItem('access_token', data.data);
-        this.securityService.getUser().subscribe((data: Result) => {
-          this.securityService.makeUser(data.data);
-          this.vehService.getVeh().subscribe((data: Result) => {
-            this.vehService.makeVeh(data.data);
-            this.router.navigate(['/tabs/home/index']);
+        this.toast.show(data.msg);
+        if (data.successed) {
+          localStorage.setItem('access_token', data.data);
+          this.securityService.getUser().subscribe((data: Result) => {
+            this.securityService.makeUser(data.data);
+            this.vehService.getVeh().subscribe((data: Result) => {
+              this.vehService.makeVeh(data.data);
+              this.router.navigate(['/tabs/home/index']);
+            });
           });
-        });
+        }
       });
     } else {
       this.toast.show('验证码错误');
