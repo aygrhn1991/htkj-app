@@ -65,10 +65,7 @@ export class RegisterComponent implements OnInit {
           localStorage.setItem('access_token', data.data);
           this.securityService.getUser().subscribe((data: Result) => {
             this.securityService.makeUser(data.data);
-            this.vehService.getVeh().subscribe((data: Result) => {
-              this.vehService.makeVeh(data.data);
-              this.router.navigate(['/tabs/home/index']);
-            });
+            this.router.navigate(['/security/bind']);
           });
         }
       });
