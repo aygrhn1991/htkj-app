@@ -19,7 +19,7 @@ export class InterceptorService implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     req = req.clone({
       url: this.apiUrl + req.url + '?timestamp=' + new Date().getTime(),
-      headers: req.headers.set("access_token", this.util.parameterTransfer(localStorage.getItem('access_token'), ''))
+      headers: req.headers.set('access_token', this.util.parameterTransfer(localStorage.getItem('access_token'), ''))
     });
     return next.handle(req).pipe(
       map((event: HttpEvent<any>) => {

@@ -63,8 +63,12 @@ export class RegisterComponent implements OnInit {
         if (data.successed) {
           localStorage.setItem('access_token', data.data);
           this.securityService.getUser().subscribe((data: Result) => {
-            this.securityService.makeUser(data.data);
-            this.router.navigate(['/security/bind']);
+            if (data.successed) {
+              this.securityService.makeUser(data.data);
+              this.router.navigate(['/security/bind']);
+            } else {
+              this.toast.show(data.msg);
+            }
           });
         }
       });

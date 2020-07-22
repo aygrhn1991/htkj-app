@@ -11,7 +11,8 @@ export class GuardService implements CanActivate {
     private util: UtilService) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    if (this.util.isNull(localStorage.getItem('access_user'))) {
+    let user = localStorage.getItem('access_user');
+    if (this.util.isNull(localStorage.getItem('access_token')) || this.util.isNull(user)) {
       this.router.navigate(['/security/login']);
       return false;
     }

@@ -60,11 +60,19 @@ export class LoginComponent implements OnInit {
         if (data.successed) {
           localStorage.setItem('access_token', data.data);
           this.securityService.getUser().subscribe((data: Result) => {
-            this.securityService.makeUser(data.data);
-            this.vehService.getVeh().subscribe((data: Result) => {
-              this.vehService.makeVeh(data.data);
-              this.router.navigate(['/tabs/home/index']);
-            });
+            if (data.successed) {
+              this.securityService.makeUser(data.data);
+              this.vehService.getVeh().subscribe((data: Result) => {
+                if (data.successed) {
+                  this.vehService.makeVeh(data.data);
+                  this.router.navigate(['/tabs/home/index']);
+                } else {
+                  this.toast.show(data.msg);
+                }
+              });
+            } else {
+              this.toast.show(data.msg);
+            }
           });
         }
       });
