@@ -11,8 +11,9 @@ export class ToastService {
   async show(message: string) {
     const toast = await this.toastController.create({
       message: message,
-      duration: 2000,
-      color: 'danger',
+      duration: 1000,
+      position:'middle',
+      cssClass: 'ht-toast'
     });
     toast.present();
   }

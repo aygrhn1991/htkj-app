@@ -5,7 +5,6 @@ import { UtilService } from 'src/app/services/util.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { HttpClient } from '@angular/common/http';
 import { SecurityService } from 'src/app/services/security.service';
-import { VehService } from 'src/app/services/veh.service';
 import { Result } from 'src/app/models/result.model';
 
 @Component({
@@ -45,7 +44,8 @@ export class RegisterComponent implements OnInit {
     })
   }
   register() {
-    if (this.user.agreement == false) {
+    console.log(this.user.agreement);
+    if (!this.user.agreement) {
       this.toast.show('请阅读并同意《航天科技云终端用户服务协议》');
       return;
     }
