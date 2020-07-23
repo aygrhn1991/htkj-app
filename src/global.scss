@@ -28,6 +28,11 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+:root {
+    --cc: #040724;
+    --dd: linear-gradient(to bottom, #00528F, #00052E);
+}
+
 * {
     color: #fff;
 }
@@ -46,11 +51,6 @@
 
 ion-toolbar {
     --background: #00042C;
-    --color: #fff;
-}
-
-ion-back-button {
-    --color: #fff;
 }
 
 ion-content {
@@ -66,8 +66,15 @@ ion-item {
     --highlight-color-focused: transparent;
 }
 
-ion-input {
+ion-item-divider {
+    font-size: 12px;
+}
+
+.ht-input {
     --background: #052B65;
+    --padding-top: 5px;
+    --padding-bottom: 5px;
     border: 1px solid #1566bb;
     border-radius: 5px;
+    text-indent: 1em;
 }
