@@ -13,8 +13,8 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', loadChildren: () => import('../home/home.module').then(m => m.HomeModule), canActivate: [GuardService] },
-      { path: 'user', loadChildren: () => import('../user/user.module').then(m => m.UserModule), canActivate: [GuardService] },
+      { path: 'home', loadChildren: () => import('../home/home.module').then(m => m.HomeModule), canActivate: [] },
+      { path: 'user', loadChildren: () => import('../user/user.module').then(m => m.UserModule), canActivate: [] },
     ]
   },
 ];

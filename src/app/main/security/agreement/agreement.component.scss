@@ -23,16 +23,10 @@
     font-weight: bold;
 }
 
-.login-form-item {
-    position: relative;
-    width: 80%;
-    margin: 20px auto;
-}
-
-.login-btn {
+.agreement>button {
     border-radius: 5px;
     line-height: 34px;
-    text-align: center;
     width: 100%;
+    margin: 20px 0;
     background: linear-gradient(to right, #66c6e9, #33a0db, #1982d3, #0b70e3);
 }
