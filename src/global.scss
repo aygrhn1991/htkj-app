@@ -59,15 +59,14 @@ ion-content {
 
 ion-item-divider {
     --background: transparent;
+    font-size: 12px;
 }
 
 ion-item {
     --background: #08459B;
     --highlight-color-focused: transparent;
-}
-
-ion-item-divider {
-    font-size: 12px;
+    --highlight-color-valid: transparent;
+    --highlight-color-invalid: transparent;
 }
 
 .ht-input {
@@ -77,4 +76,8 @@ ion-item-divider {
     border: 1px solid #1566bb;
     border-radius: 5px;
     text-indent: 1em;
+}
+
+ion-button {
+    --border-radius: 5px;
 }

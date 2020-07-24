@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { UtilService } from 'src/app/services/util.service';
+import { ToastService } from 'src/app/services/toast.service';
+import { HttpClient } from '@angular/common/http';
+import { Result } from 'src/app/models/result.model';
+import { ActivatedRoute, RouterStateSnapshot, Router } from '@angular/router';
 
 @Component({
   selector: 'app-bind',
@@ -7,59 +11,35 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./bind.component.scss'],
 })
 export class BindComponent implements OnInit {
-  constructor(public alertController: AlertController) {}
+
+  constructor(private util: UtilService,
+    private toast: ToastService,
+    private http: HttpClient,
+    private route: ActivatedRoute,
+    private router: Router,) { }
+
   ngOnInit(): void {
-    
+    this.from = this.route.snapshot.params['from'];
+    console.log(this.from);
   }
-
-  async presentAlert() {
-    const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      header: 'Alert',
-      subHeader: 'Subtitle',
-      message: 'This is an alert message.',
-      buttons: ['OK']
-    });
-
-    await alert.present();
-  }
-
-  async presentAlertMultipleButtons() {
-    const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      header: 'Alert',
-      subHeader: 'Subtitle',
-      message: 'This is an alert message.',
-      buttons: ['Cancel', 'Open Modal', 'Delete']
-    });
-
-    await alert.present();
-  }
-
-  async presentAlertConfirm() {
-    const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      header: 'Confirm!',
-      message: 'Message <strong>text</strong>!!!',
-      buttons: [
-        {
-          text: 'Cancel',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: (blah) => {
-            console.log('Confirm Cancel: blah');
-          }
-        }, {
-          text: 'Okay',
-          handler: () => {
-            console.log('Confirm Okay');
-          }
+  from: number = 0;
+  vin: string = null;
+  bind() {
+    if (this.util.isNull(this.vin) || this.vin.length != 17) {
+      this.toast.show('请输入正确的VIN');
+      return;
+    }
+    this.http.get(`/r.json`).subscribe((data: Result) => {
+      this.toast.show(data.msg);
+      if (data.successed) {
+        if (this.from == 0) {
+          this.router.navigate(['/tabs/home/index']);
         }
-      ]
+      }
     });
-
-    await alert.present();
   }
+
+
 
 
 }

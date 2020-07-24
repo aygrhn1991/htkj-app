@@ -23,17 +23,17 @@
 
 .login-form-item>input {
     width: 100%;
-    height: 36px;
+    line-height: 30px;
     background: rgba(255, 255, 255, .05);
     border: 1px solid #1566bb;
     border-radius: 5px;
-    text-indent: 36px;
+    text-indent: 30px;
 }
 
 .login-form-item>ion-icon {
     position: absolute;
-    top: 9px;
-    left: 9px;
+    top: 8px;
+    left: 8px;
     font-size: 18px;
 }
 
@@ -42,14 +42,14 @@
     top: 0;
     right: 0;
     border-radius: 5px;
-    line-height: 34px;
+    line-height: 32px;
     width: 120px;
     background: linear-gradient(to right, #66c6e9, #33a0db, #1982d3, #0b70e3);
 }
 
 .login-btn {
     border-radius: 5px;
-    line-height: 34px;
+    line-height: 32px;
     width: 100%;
     background: linear-gradient(to right, #66c6e9, #33a0db, #1982d3, #0b70e3);
 }

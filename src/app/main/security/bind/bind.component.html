@@ -11,56 +11,43 @@
         <ion-label>车辆绑定</ion-label>
     </ion-item-divider>
     <ion-item>
-        <ion-input class="ht-input" placeholder="VIN"></ion-input>
-        <ion-button slot="end">绑定</ion-button>
+        <ion-input class="ht-input" [(ngModel)]="vin" placeholder="VIN"></ion-input>
+        <ion-button slot="end" (click)="bind()">绑定</ion-button>
     </ion-item>
     <ion-item-divider>
         <ion-label>已绑定车辆</ion-label>
     </ion-item-divider>
-    <div class="content search-bar">
-        <input type="text" placeholder="VIN">
-        <button>绑定</button>
-    </div>
-    <div class="subtitle">已绑定车辆</div>
-    <div class="content">
-        <div class="item-title"></div>
-    </div>
     <ion-item>
-        <ion-label>Button Start/End</ion-label>
-        <ion-button slot="end">
-            End
-        </ion-button>
-    </ion-item>
-    <ion-item>
-        <ion-label class="ion-text-wrap">
-            <ion-text color="primary">
-                <h3>H3 Primary Title</h3>
-            </ion-text>
-            <p>Paragraph line 1</p>
-            <ion-text color="secondary">
-                <p>Paragraph line 2 secondary</p>
-            </ion-text>
+        <ion-label>
+            <ion-label>黑A12345</ion-label>
+            <ion-label class="subtitle">ABCDEFGABCDEFGAAA</ion-label>
         </ion-label>
+        <ion-button slot="end">切换</ion-button>
+        <ion-button slot="end">解绑</ion-button>
     </ion-item>
     <ion-item>
-        <ion-button slot="start">
-            Start Icon
-            <ion-icon name="home" slot="end"></ion-icon>
-        </ion-button>
-        <ion-label>Buttons with Icons</ion-label>
-        <ion-button slot="end">
-            <ion-icon name="star" slot="end"></ion-icon>
-            End Icon
-        </ion-button>
+        <ion-label>
+            <ion-label>
+                <ion-icon name="checkmark-outline"></ion-icon>黑A12345
+            </ion-label>
+            <ion-label class="subtitle">ABCDEFGABCDEFGAAA</ion-label>
+        </ion-label>
+        <ion-button slot="end">解绑</ion-button>
     </ion-item>
-
     <ion-item>
-        <ion-button slot="start">
-            <ion-icon slot="icon-only" name="navigate"></ion-icon>
-        </ion-button>
-        <ion-label>Icon only Buttons</ion-label>
-        <ion-button slot="end">
-            <ion-icon slot="icon-only" name="star"></ion-icon>
-        </ion-button>
+        <ion-label>
+            <ion-label>黑A12345</ion-label>
+            <ion-label class="subtitle">ABCDEFGABCDEFGAAA</ion-label>
+        </ion-label>
+        <ion-button slot="end">切换</ion-button>
+        <ion-button slot="end">解绑</ion-button>
+    </ion-item>
+    <ion-item>
+        <ion-label>
+            <ion-label>黑A12345</ion-label>
+            <ion-label class="subtitle">ABCDEFGABCDEFGAAA</ion-label>
+        </ion-label>
+        <ion-button slot="end">切换</ion-button>
+        <ion-button slot="end">解绑</ion-button>
     </ion-item>
 </ion-content>

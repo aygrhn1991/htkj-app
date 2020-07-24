@@ -65,7 +65,7 @@ export class RegisterComponent implements OnInit {
           this.securityService.getUser().subscribe((data: Result) => {
             if (data.successed) {
               this.securityService.makeUser(data.data);
-              this.router.navigate(['/security/bind']);
+              this.router.navigate(['/security/bind/0']);
             } else {
               this.toast.show(data.msg);
             }
