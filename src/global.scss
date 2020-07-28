@@ -29,13 +29,11 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 :root {
-    --cc: #040724;
+    --root-border-color: #1566bb;
+    --root-background-color: #00032C;
     --dd: linear-gradient(to bottom, #00528F, #00052E);
 }
 
-// * {
-//     color: #fff;
-// }
 *:focus {
     outline: none;
 }
@@ -50,7 +48,7 @@
 
 ion-toolbar {
     --color: #fff;
-    --background: #00042C;
+    --background: #000;
 }
 
 ion-back-button {
@@ -59,16 +57,21 @@ ion-back-button {
 
 ion-tab-bar {
     --color: #fff;
-    --background: #3388FF;
+    --background: var(--root-background-color);
+    --border: 1px solid var(--root-border-color);
+}
+
+ion-tab-bar ion-icon {
+    font-size: 20px;
 }
 
 ion-tab-button {
-    --color-selected: #08459B;
+    --color-selected: #40b8dd;
 }
 
 ion-content {
     --color: #fff;
-    --background: #031E47;
+    --background: var(--root-background-color);
 }
 
 ion-item-divider {
@@ -79,23 +82,27 @@ ion-item-divider {
 
 ion-item {
     --color: #fff;
-    --background: #08459B;
+    --background: #031F47;
     --highlight-color-focused: transparent;
     --highlight-color-valid: transparent;
     --highlight-color-invalid: transparent;
 }
 
-.ht-input {
-    --color: #fff;
-    --background: #052B65;
-    --padding-top: 5px;
-    --padding-bottom: 5px;
-    border: 1px solid #1566bb;
+ion-input {
+    --color: #fff !important;
+    --background: #052B65 !important;
+    --padding-top: 5px !important;
+    --padding-bottom: 5px !important;
+    border: 1px solid var(--root-border-color);
     border-radius: 5px;
     text-indent: 1em;
 }
 
 ion-button {
     --color: #fff;
+    --border-width: 1px;
+    --border-style: solid;
+    --border-color: var(--root-border-color);
     --border-radius: 5px;
+    --background: linear-gradient(to bottom, #00528F, #00052E);
 }
