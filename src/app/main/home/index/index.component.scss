@@ -1,15 +1,14 @@
-ion-content {
-    --padding-start: 20px;
-    --padding-end: 20px;
+.index {
+    padding: 20px;
+    background: linear-gradient(to bottom, #03204C 180px, #00032C 180px, #00032C 370px, #020419 370px);
 }
 
 .index-search {
     position: relative;
-    padding: 10px 0;
 }
 
 .index-search input {
-    width: 85%;
+    width: 90%;
     line-height: 24px;
     background: #052B65;
     border: 1px solid #1566bb;
@@ -19,14 +18,134 @@ ion-content {
 
 .index-search-input-icon {
     position: absolute;
-    top: 16px;
+    top: 8px;
     left: 8px;
 }
 
 .index-search-input-btn {
     position: absolute;
-    top: 3px;
-    right: 3px;
+    top: 4px;
+    right: 12%;
 }
 
-.index-search-icon {}
+.index-search-message>ion-icon {
+    font-size: 26px;
+    position: absolute;
+    right: 0;
+    top: 1px;
+    color: #40b8dd;
+}
+
+.index-search-message>div {
+    position: absolute;
+    top: 2px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    border-radius: 100px;
+    background: #f00;
+}
+
+.index-info {
+    vertical-align: top;
+    display: inline-block;
+    width: 60%;
+}
+
+.index-info-hello {
+    font-size: 18px;
+    padding: 18px 0;
+}
+
+.index-info-location {
+    font-size: 12px;
+}
+
+.index-weather {
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+    padding-top: 16px;
+}
+
+.index-weather>img {
+    height: 20px;
+}
+
+.index-weather>div {
+    font-size: 12px;
+}
+
+.index-weather-text {
+    margin-bottom: 4px;
+}
+
+.index-part3 {
+    margin: 15px 0;
+}
+
+.index-block3 {
+    display: inline-block;
+    width: 48%;
+    border-radius: 3px;
+    background: linear-gradient(to bottom, #00528F, #00052E);
+    margin: 5px 0;
+}
+
+.index-part3>.index-block3:nth-child(2n) {
+    float: right;
+}
+
+.index-block3-img {
+    vertical-align: top;
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.index-block3-img>img {
+    width: 30px;
+    height: 30px;
+}
+
+.index-block3-text {
+    display: inline-block;
+    width: 60%;
+    padding-top: 8px;
+}
+
+.index-block3-text>div:first-child {
+    font-size: 18px;
+}
+
+.index-block3-text>div:first-child>span {
+    font-size: 12px;
+}
+
+.index-block3-text>div:last-child {
+    font-size: 12px;
+    color: #ccc;
+}
+
+.index-part4 {
+    text-align: center;
+}
+
+.index-block4 {
+    display: inline-block;
+    width: 30%;
+}
+
+.index-block4-number {
+    font-size: 18px;
+}
+
+.index-block4-number>span {
+    font-size: 12px;
+}
+
+.index-block4-text {
+    font-size: 12px;
+    color: #ccc;
+}

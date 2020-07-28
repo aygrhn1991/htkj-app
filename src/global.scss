@@ -36,7 +36,6 @@
 
 * {
     font-size: 14px;
-    color: #fff;
 }
 
 *:focus {
@@ -60,7 +59,6 @@ input:-ms-input-placeholder {
 }
 
 .ht-toast {
-    --color: #fff;
     --background: rgba(0, 0, 0, 0.8);
     --border-radius: 5px;
     --max-width: 80%;
@@ -78,12 +76,16 @@ ion-tab-bar {
     --border: 1px solid var(--root-border-color);
 }
 
+ion-tab-bar ion-label {
+    font-size: 12px;
+}
+
 ion-tab-bar ion-icon {
     font-size: 20px;
 }
 
 ion-tab-button {
-    --color-selected: #40b8dd;
+    --color-selected: #40b8dd !important;
 }
 
 ion-content {
@@ -106,7 +108,7 @@ ion-item {
 }
 
 ion-input {
-    --color: #fff !important;
+    --color: #fff;
     --background: #052B65 !important;
     --padding-top: 3px !important;
     --padding-bottom: 3px !important;
@@ -123,4 +125,8 @@ ion-button {
     --border-color: var(--root-border-color);
     --border-radius: 5px;
     --background: linear-gradient(to bottom, #00528F, #00052E);
+}
+
+ion-button ion-icon {
+    font-size: 12px;
 }
