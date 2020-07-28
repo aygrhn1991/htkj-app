@@ -22,6 +22,7 @@ export class BindComponent implements OnInit {
     this.from = this.route.snapshot.params['from'];
     console.log(this.from);
   }
+  
   from: number = 0;
   vin: string = null;
   bind() {

@@ -1,12 +1,10 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-buttons slot="start">
-            <ion-back-button text=""></ion-back-button>
-        </ion-buttons>
-        <ion-title>首页</ion-title>
-    </ion-toolbar>
-</ion-header>
 <ion-content fullscreen="true">
+    <div class="index-search">
+        <ion-icon name="search" class="index-search-input-icon"></ion-icon>
+        <input type="text" [(ngModel)]="key" placeholder="关键字">
+        <span class="index-search-input-btn">搜索</span>
+        <ion-icon name="mail" class="index-search-icon"></ion-icon>
+    </div>
     <p> home/index1111111111111111</p>
     <p> home/index</p>
     <p> home/index</p>

@@ -11,7 +11,7 @@
         <ion-label>车辆绑定</ion-label>
     </ion-item-divider>
     <ion-item>
-        <ion-input class="ht-input" [(ngModel)]="vin" placeholder="请输入要绑定的VIN"></ion-input>
+        <ion-input [(ngModel)]="vin" placeholder="请输入要绑定的VIN"></ion-input>
         <ion-button slot="end" (click)="bind()">
             <ion-icon name="flash"></ion-icon>绑定
         </ion-button>

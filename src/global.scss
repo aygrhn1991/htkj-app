@@ -34,6 +34,11 @@
     --root-jb: linear-gradient(to bottom, #00528F, #00052E);
 }
 
+* {
+    font-size: 14px;
+    color: #fff;
+}
+
 *:focus {
     outline: none;
 }
@@ -65,10 +70,6 @@ input:-ms-input-placeholder {
 ion-toolbar {
     --color: #fff;
     --background: #000;
-}
-
-ion-back-button {
-    --color: #fff;
 }
 
 ion-tab-bar {

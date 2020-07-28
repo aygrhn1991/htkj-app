@@ -1,0 +1,32 @@
+ion-content {
+    --padding-start: 20px;
+    --padding-end: 20px;
+}
+
+.index-search {
+    position: relative;
+    padding: 10px 0;
+}
+
+.index-search input {
+    width: 85%;
+    line-height: 24px;
+    background: #052B65;
+    border: 1px solid #1566bb;
+    border-radius: 5px;
+    text-indent: 30px;
+}
+
+.index-search-input-icon {
+    position: absolute;
+    top: 16px;
+    left: 8px;
+}
+
+.index-search-input-btn {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+}
+
+.index-search-icon {}

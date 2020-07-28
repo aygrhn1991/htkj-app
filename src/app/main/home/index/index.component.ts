@@ -9,6 +9,8 @@ export class IndexComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
+
+  key: string = null;
 
 }
