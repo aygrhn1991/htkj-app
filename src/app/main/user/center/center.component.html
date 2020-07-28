@@ -4,8 +4,54 @@
     </ion-toolbar>
 </ion-header>
 <ion-content fullscreen="true">
-    个人中心
-    <ion-button routerLink="/security/bind/1">绑定页</ion-button>
-    <ion-button routerLink="/tabs/user/center">个人中心</ion-button>
-    <ion-button routerLink="/tabs/user/update-log">升级日志</ion-button>
+    <div class="center-info">
+        <img src="../../../../assets/img/head.jpg">
+        <div class="center-info-name">陈玉锋</div>
+        <div class="center-info-phone">15645100192</div>
+    </div>
+    <ion-item-divider>
+        <ion-label>基础管理</ion-label>
+    </ion-item-divider>
+    <ion-item detail routerLink="/security/bind/1">
+        <ion-label>
+            <ion-icon name="flash"></ion-icon>车辆绑定
+        </ion-label>
+    </ion-item>
+    <ion-item detail routerLink="/tabs/user/setting">
+        <ion-label>
+            <ion-icon name="settings"></ion-icon>应用设置
+        </ion-label>
+    </ion-item>
+    <ion-item-divider>
+        <ion-label>消息日志</ion-label>
+    </ion-item-divider>
+    <ion-item detail routerLink="/tabs/user/message">
+        <ion-label>
+            <ion-icon name="chatbubble-ellipses"></ion-icon>消息
+        </ion-label>
+        <ion-badge color="danger">66</ion-badge>
+    </ion-item>
+    <ion-item detail routerLink="/tabs/user/update-log">
+        <ion-label>
+            <ion-icon name="cloud-upload"></ion-icon>升级日志
+        </ion-label>
+    </ion-item>
+    <ion-item-divider>
+        <ion-label>系统安全</ion-label>
+    </ion-item-divider>
+    <ion-item detail routerLink="/tabs/user/info">
+        <ion-label>
+            <ion-icon name="person"></ion-icon>用户信息维护
+        </ion-label>
+    </ion-item>
+    <ion-item detail routerLink="/tabs/user/security">
+        <ion-label>
+            <ion-icon name="shield-checkmark"></ion-icon>账号安全
+        </ion-label>
+    </ion-item>
+    <ion-item detail (click)="logout()">
+        <ion-label>
+            <ion-icon name="power" style="background:#eb445a;"></ion-icon>注销登录
+        </ion-label>
+    </ion-item>
 </ion-content>

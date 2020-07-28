@@ -13,7 +13,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    ListComponent
+    BlankComponent,
+    ListComponent,
   ],
   imports: [
     IonicModule,

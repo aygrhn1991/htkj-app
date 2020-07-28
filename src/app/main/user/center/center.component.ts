@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-center',
@@ -7,8 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CenterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
+
+  logout() {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('access_user');
+    localStorage.removeItem('access_vehs');
+    localStorage.removeItem('access_veh');
+    this.router.navigate(['/security/login']);
+  }
 
 }

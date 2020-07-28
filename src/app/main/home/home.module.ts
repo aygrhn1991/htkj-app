@@ -5,15 +5,17 @@ import { IndexComponent } from './index/index.component';
 import { DocComponent } from './doc/doc.component';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
+import { BlankComponent } from 'src/app/modules/blank/blank.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'index' },
   { path: 'index', component: IndexComponent, },
-  { path: 'doc', component: DocComponent, }
+  { path: 'doc', component: BlankComponent, }
 ];
 
 @NgModule({
   declarations: [
+    BlankComponent,
     IndexComponent,
     DocComponent,
   ],

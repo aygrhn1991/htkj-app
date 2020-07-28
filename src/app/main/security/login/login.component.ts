@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
     })
   }
   login() {
+    this.router.navigate(['/tabs/home/index']);
     if (this.util.isNull(this.user.phone) || this.user.phone.length != 11) {
       this.toast.show('请填写正确的手机号');
       return;

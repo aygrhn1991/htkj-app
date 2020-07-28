@@ -2,11 +2,11 @@
     <div class="login-logo"></div>
     <div class="login-form">
         <div class="login-form-item">
-            <ion-icon name="phone-portrait-outline"></ion-icon>
+            <ion-icon name="phone-portrait"></ion-icon>
             <input type="tel" [(ngModel)]="user.phone" placeholder="手机号">
         </div>
         <div class="login-form-item">
-            <ion-icon name="lock-closed-outline"></ion-icon>
+            <ion-icon name="lock-closed"></ion-icon>
             <input type="tel" [(ngModel)]="user.code" placeholder="验证码">
             <button class="login-code-btn" (click)="sendPhoneCode()" [disabled]="seconds>0">发送验证码{{secondsMsg}}</button>
         </div>
@@ -14,9 +14,6 @@
             <button class="login-btn" (click)="login()">登录</button>
         </div>
         <div class="login-goto"><label routerLink="/security/register">注册{{_code}}</label></div>
-        <div routerLink="/security/bind/1">绑定页</div>
-        <div routerLink="/tabs/user/center">个人中心</div>
-        <div routerLink="/tabs/user/update-log">升级日志</div>
         <div class="login-footer">航天科技控股集团股份有限公司</div>
     </div>
 </div>

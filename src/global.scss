@@ -31,11 +31,27 @@
 :root {
     --root-border-color: #1566bb;
     --root-background-color: #00032C;
-    --dd: linear-gradient(to bottom, #00528F, #00052E);
+    --root-jb: linear-gradient(to bottom, #00528F, #00052E);
 }
 
 *:focus {
     outline: none;
+}
+
+input::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+input::-moz-placeholder {
+    color: #ccc;
+}
+
+input:-moz-placeholder {
+    color: #ccc;
+}
+
+input:-ms-input-placeholder {
+    color: #ccc;
 }
 
 .ht-toast {
@@ -91,8 +107,9 @@ ion-item {
 ion-input {
     --color: #fff !important;
     --background: #052B65 !important;
-    --padding-top: 5px !important;
-    --padding-bottom: 5px !important;
+    --padding-top: 3px !important;
+    --padding-bottom: 3px !important;
+    --placeholder-color: #ccc !important;
     border: 1px solid var(--root-border-color);
     border-radius: 5px;
     text-indent: 1em;
