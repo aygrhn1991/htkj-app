@@ -1,6 +1,27 @@
-.index {
+.index-part1 {
     padding: 20px;
-    background: linear-gradient(to bottom, #03204C 180px, #00032C 180px, #00032C 370px, #020419 370px);
+    background: #03204C;
+}
+
+.index-part2 {
+    padding: 0 20px 20px 20px;
+    background: #03204C;
+}
+
+.index-part3 {
+    padding: 20px;
+    background: #00032C;
+}
+
+.index-part4 {
+    padding: 0 20px 20px 20px;
+    background: #00032C;
+    border-bottom: 1px solid #03204C;
+}
+
+.index-part5 {
+    padding: 20px;
+    background: #020419;
 }
 
 .index-search {
@@ -54,7 +75,7 @@
 
 .index-info-hello {
     font-size: 18px;
-    padding: 18px 0;
+    padding-bottom: 18px;
 }
 
 .index-info-location {
@@ -65,7 +86,6 @@
     display: inline-block;
     width: 40%;
     text-align: center;
-    padding-top: 16px;
 }
 
 .index-weather>img {
@@ -77,19 +97,15 @@
 }
 
 .index-weather-text {
-    margin-bottom: 4px;
-}
-
-.index-part3 {
-    margin: 15px 0;
+    margin-bottom: 2px;
 }
 
 .index-block3 {
     display: inline-block;
     width: 48%;
     border-radius: 3px;
-    background: linear-gradient(to bottom, #00528F, #00052E);
-    margin: 5px 0;
+    background: var(--root-jb);
+    margin-bottom: 10px;
 }
 
 .index-part3>.index-block3:nth-child(2n) {
@@ -128,13 +144,10 @@
     color: #ccc;
 }
 
-.index-part4 {
-    text-align: center;
-}
-
 .index-block4 {
     display: inline-block;
-    width: 30%;
+    text-align: center;
+    width: 33%;
 }
 
 .index-block4-number {
@@ -148,4 +161,22 @@
 .index-block4-text {
     font-size: 12px;
     color: #ccc;
+}
+
+.index-block5 {
+    text-align: center;
+    display: inline-block;
+    width: 25%;
+}
+
+.index-block5-icon>ion-icon {
+    border-radius: 100px;
+    padding: 10px;
+    background: var(--root-jb);
+    font-size: 20px;
+}
+
+.index-block5-text {
+    font-size: 12px;
+    padding: 5px 0 20px 0;
 }

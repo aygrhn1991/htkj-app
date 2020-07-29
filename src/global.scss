@@ -70,6 +70,10 @@ ion-toolbar {
     --background: #000;
 }
 
+ion-back-button {
+    --color: #fff;
+}
+
 ion-tab-bar {
     --color: #fff;
     --background: var(--root-background-color);
@@ -124,7 +128,7 @@ ion-button {
     --border-style: solid;
     --border-color: var(--root-border-color);
     --border-radius: 5px;
-    --background: linear-gradient(to bottom, #00528F, #00052E);
+    --background: var(--root-jb);
 }
 
 ion-button ion-icon {
