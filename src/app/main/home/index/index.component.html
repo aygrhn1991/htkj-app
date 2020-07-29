@@ -5,7 +5,7 @@
             <input type="text" [(ngModel)]="key" placeholder="关键字">
             <span class="index-search-input-btn">搜索</span>
             <div class="index-search-message">
-                <ion-icon name="mail"></ion-icon>
+                <ion-icon name="mail" routerLink="/tabs/user/message"></ion-icon>
                 <div></div>
             </div>
         </div>
@@ -28,7 +28,7 @@
     <div class="index-part3">
         <div class="index-block3">
             <div class="index-block3-img">
-                <img src="../../../../assets/img/head.jpg">
+                <img src="../../../../assets/img/index-1.png">
             </div>
             <div class="index-block3-text">
                 <div>365<span>天</span></div>
@@ -37,7 +37,7 @@
         </div>
         <div class="index-block3">
             <div class="index-block3-img">
-                <img src="../../../../assets/img/head.jpg">
+                <img src="../../../../assets/img/index-2.png">
             </div>
             <div class="index-block3-text">
                 <div>365<span>天</span></div>
@@ -46,7 +46,7 @@
         </div>
         <div class="index-block3">
             <div class="index-block3-img">
-                <img src="../../../../assets/img/head.jpg">
+                <img src="../../../../assets/img/index-3.png">
             </div>
             <div class="index-block3-text">
                 <div>365<span>天</span></div>
@@ -55,7 +55,7 @@
         </div>
         <div class="index-block3">
             <div class="index-block3-img">
-                <img src="../../../../assets/img/head.jpg">
+                <img src="../../../../assets/img/index-4.png">
             </div>
             <div class="index-block3-text">
                 <div>365<span>天</span></div>
@@ -78,49 +78,59 @@
         </div>
     </div>
     <div class="index-part5">
-        <div class="index-block5">
+        <div class="index-block5" routerLink="/tabs/home/doc">
             <div class="index-block5-icon">
                 <ion-icon name="document-attach"></ion-icon>
             </div>
             <div class="index-block5-text">车辆档案</div>
         </div>
-        <div class="index-block5">
+        <div class="index-block5" routerLink="/tabs/home/data">
             <div class="index-block5-icon">
                 <ion-icon name="stats-chart"></ion-icon>
             </div>
             <div class="index-block5-text">行驶统计</div>
         </div>
-        <div class="index-block5">
+        <div class="index-block5" routerLink="/tabs/home/alarm">
+            <div class="index-block5-icon">
+                <ion-icon name="notifications"></ion-icon>
+            </div>
+            <div class="index-block5-text">故障报警</div>
+        </div>
+        <div class="index-block5" routerLink="/tabs/home/repair">
             <div class="index-block5-icon">
                 <ion-icon name="construct"></ion-icon>
             </div>
             <div class="index-block5-text">维修保养</div>
         </div>
-        <div class="index-block5">
+        <div class="index-block5" routerLink="/tabs/home/regulation">
             <div class="index-block5-icon">
                 <ion-icon name="shield"></ion-icon>
             </div>
             <div class="index-block5-text">违章</div>
         </div>
-        <div class="index-block5">
+        <div class="index-block5" routerLink="/tabs/home/forum">
             <div class="index-block5-icon">
                 <ion-icon name="people"></ion-icon>
             </div>
             <div class="index-block5-text">车友圈</div>
         </div>
-        <div class="index-block5">
+        <div class="index-block5" routerLink="/tabs/home/rank">
             <div class="index-block5-icon">
                 <ion-icon name="cellular"></ion-icon>
             </div>
             <div class="index-block5-text">排行榜</div>
         </div>
-        <div class="index-block5">
+        <div class="index-block5" routerLink="/tabs/home/rank">
+            <div class="index-block5-icon">
+                <ion-icon name="flag"></ion-icon>
+            </div>
+            <div class="index-block5-text">我的车队</div>
+        </div>
+        <div class="index-block5" routerLink="/tabs/list/list">
             <div class="index-block5-icon">
                 <ion-icon name="grid"></ion-icon>
             </div>
             <div class="index-block5-text">全部功能</div>
         </div>
     </div>
-
-
 </ion-content>

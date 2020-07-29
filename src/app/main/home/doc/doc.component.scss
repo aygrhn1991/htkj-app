@@ -1,0 +1,23 @@
+.doc {
+    padding: 20px;
+}
+
+.doc-img {
+    width: 100%;
+    height: 100px;
+}
+
+.doc-veh {
+    position: absolute;
+    top: 80px;
+    left: 25px;
+    font-size: 18px;
+}
+
+.doc-block {
+    background: var(--root-jb);
+    padding: 10px 20px;
+    border-radius: 3px;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
