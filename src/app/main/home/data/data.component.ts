@@ -42,4 +42,8 @@ export class DataComponent implements OnInit {
     chart3.setOption(option3);
   }
 
+
+  segmentChanged(){
+    
+  }
 }

@@ -134,3 +134,14 @@ ion-button {
 ion-button ion-icon {
     font-size: 12px;
 }
+
+ion-segment {
+    --background: #031E47;
+}
+
+ion-segment-button {
+    --indicator-color: transparent;
+    --color-checked: #348CFF;
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+}

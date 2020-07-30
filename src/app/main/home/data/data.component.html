@@ -7,7 +7,17 @@
     </ion-toolbar>
 </ion-header>
 <ion-content fullscreen="true">
-    <ion-button (click)="makeChart()">画图</ion-button>
+    <ion-segment (ionChange)="segmentChanged($event)" value="2">
+        <ion-segment-button value="1">
+            <ion-label>基本数据</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="2">
+            <ion-label>统计数据</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="3">
+            <ion-label>车速分析</ion-label>
+        </ion-segment-button>
+    </ion-segment>
     <div #chart1 class="data-chart"></div>
     <div #chart2 class="data-chart"></div>
     <div #chart3 class="data-chart"></div>
