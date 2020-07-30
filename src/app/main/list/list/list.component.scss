@@ -1,0 +1,50 @@
+.list-part1 {
+    padding: 20px;
+}
+
+.list-part2 {
+    padding: 20px 20px 0 20px;
+}
+
+.list-search {
+    position: relative;
+}
+
+.list-search input {
+    width: 100%;
+    line-height: 24px;
+    background: #052B65;
+    border: 1px solid #1566bb;
+    border-radius: 5px;
+    text-indent: 30px;
+}
+
+.list-search-input-icon {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+.list-search-input-btn {
+    position: absolute;
+    top: 4px;
+    right: 4%;
+}
+
+.index-block5 {
+    text-align: center;
+    display: inline-block;
+    width: 25%;
+}
+
+.index-block5-icon>ion-icon {
+    border-radius: 100px;
+    padding: 10px;
+    background: var(--root-jb);
+    font-size: 20px;
+}
+
+.index-block5-text {
+    font-size: 12px;
+    padding: 5px 0 20px 0;
+}

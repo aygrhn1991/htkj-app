@@ -1,3 +1,14 @@
-<p>
-  data works!
-</p>
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text=""></ion-back-button>
+        </ion-buttons>
+        <ion-title>行驶统计</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true">
+    <ion-button (click)="makeChart()">画图</ion-button>
+    <div #chart1 class="data-chart"></div>
+    <div #chart2 class="data-chart"></div>
+    <div #chart3 class="data-chart"></div>
+</ion-content>

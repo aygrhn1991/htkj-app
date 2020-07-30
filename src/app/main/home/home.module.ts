@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'regulation', component: BlankComponent, },
   { path: 'forum', component: BlankComponent, },
   { path: 'rank', component: BlankComponent, },
+  { path: 'team', component: BlankComponent, },
 ];
 
 @NgModule({

@@ -8,7 +8,7 @@ import { BlankComponent } from '../../modules/blank/blank.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'list' },
-  { path: 'list', component: BlankComponent, },
+  { path: 'list', component: ListComponent, },
 ];
 
 @NgModule({

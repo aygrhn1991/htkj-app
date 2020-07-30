@@ -1,3 +1,82 @@
-<p>
-  list works!
-</p>
+<ion-content fullscreen="true">
+    <div class="list-part1">
+        <div class="list-search">
+            <ion-icon name="search" class="list-search-input-icon"></ion-icon>
+            <input type="text" [(ngModel)]="key" placeholder="关键字">
+            <span class="list-search-input-btn">搜索</span>
+        </div>
+    </div>
+    <ion-item-divider>
+        <ion-label>车况信息</ion-label>
+    </ion-item-divider>
+    <div class="list-part2">
+        <div class="index-block5" routerLink="/tabs/home/doc">
+            <div class="index-block5-icon">
+                <ion-icon name="document-attach"></ion-icon>
+            </div>
+            <div class="index-block5-text">车辆档案</div>
+        </div>
+    </div>
+    <ion-item-divider>
+        <ion-label>行驶数据</ion-label>
+    </ion-item-divider>
+    <div class="list-part2">
+        <div class="index-block5" routerLink="/tabs/home/data">
+            <div class="index-block5-icon">
+                <ion-icon name="stats-chart"></ion-icon>
+            </div>
+            <div class="index-block5-text">行驶统计</div>
+        </div>
+        <div class="index-block5" routerLink="/tabs/home/alarm">
+            <div class="index-block5-icon">
+                <ion-icon name="notifications"></ion-icon>
+            </div>
+            <div class="index-block5-text">故障报警</div>
+        </div>
+    </div>
+    <ion-item-divider>
+        <ion-label>扩展服务</ion-label>
+    </ion-item-divider>
+    <div class="list-part2">
+        <div class="index-block5" routerLink="/tabs/home/repair">
+            <div class="index-block5-icon">
+                <ion-icon name="construct"></ion-icon>
+            </div>
+            <div class="index-block5-text">维修保养</div>
+        </div>
+        <div class="index-block5" routerLink="/tabs/home/regulation">
+            <div class="index-block5-icon">
+                <ion-icon name="shield"></ion-icon>
+            </div>
+            <div class="index-block5-text">违章</div>
+        </div>
+    </div>
+    <ion-item-divider>
+        <ion-label>车友圈</ion-label>
+    </ion-item-divider>
+    <div class="list-part2">
+        <div class="index-block5" routerLink="/tabs/home/forum">
+            <div class="index-block5-icon">
+                <ion-icon name="people"></ion-icon>
+            </div>
+            <div class="index-block5-text">车友圈</div>
+        </div>
+        <div class="index-block5" routerLink="/tabs/home/rank">
+            <div class="index-block5-icon">
+                <ion-icon name="cellular"></ion-icon>
+            </div>
+            <div class="index-block5-text">排行榜</div>
+        </div>
+    </div>
+    <ion-item-divider>
+        <ion-label>车队管理</ion-label>
+    </ion-item-divider>
+    <div class="list-part2">
+        <div class="index-block5" routerLink="/tabs/home/rank">
+            <div class="index-block5-icon">
+                <ion-icon name="flag"></ion-icon>
+            </div>
+            <div class="index-block5-text">我的车队</div>
+        </div>
+    </div>
+</ion-content>
