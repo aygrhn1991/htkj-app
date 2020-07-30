@@ -37,12 +37,15 @@ export class LoginComponent implements OnInit {
     }
     this._phone = this.user.phone;
     this._code = this.util.getIntRandom(1000, 10000);
-    this.http.get(`/r.json`).subscribe((data: Result) => {
+    this.http.get(`/htkjapp/htkjapp/sendPhoneCode/${this._phone}/${this._code}`).subscribe((data: Result) => {
       this.toast.show(data.msg);
       if (data.successed) {
         this.seconds = 5;
         this.counter();
       }
+    })
+    this.http.get(`/iov/homePageCtrl/homepage_g6/1?timestamp=1596079300043?timestamp=1596079300043`).subscribe((data: Result) => {
+      this.toast.show(data.data);
     })
   }
   login() {

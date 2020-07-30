@@ -22,13 +22,12 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(),
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules, useHash: true })
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    { provide: 'API_URL', useValue: '/htkjapp' },
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }
   ],
   bootstrap: [

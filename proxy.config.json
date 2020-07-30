@@ -1,5 +1,5 @@
 {
-    "/htkjapp": {
-        "target": "http://localhost:8002"
+    "/": {
+        "target": "http://192.168.40.91:57696"
     }
 }
