@@ -31,7 +31,7 @@ export class BindComponent implements OnInit {
       return;
     }
     this.http.get(`/r.json`).subscribe((data: Result) => {
-      this.toast.show(data.msg);
+      this.toast.show(data.data);
       if (data.successed) {
         if (this.from == 0) {
           this.router.navigate(['/tabs/home/index']);

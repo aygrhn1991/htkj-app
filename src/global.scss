@@ -59,6 +59,7 @@ input:-ms-input-placeholder {
 }
 
 .ht-toast {
+    --color: #fff;
     --background: rgba(0, 0, 0, 0.8);
     --border-radius: 5px;
     --max-width: 80%;
@@ -140,6 +141,7 @@ ion-segment {
 }
 
 ion-segment-button {
+    --color: #fff;
     --indicator-color: transparent;
     --color-checked: #348CFF;
     --padding-top: 10px;

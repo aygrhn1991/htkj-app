@@ -8,7 +8,7 @@ import { BlankComponent } from 'src/app/modules/blank/blank.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'index' },
-  { path: 'index', component: BlankComponent, },
+  { path: 'index', component: MapComponent, },
 ];
 
 @NgModule({

@@ -38,18 +38,14 @@ export class LoginComponent implements OnInit {
     this._phone = this.user.phone;
     this._code = this.util.getIntRandom(1000, 10000);
     this.http.get(`/htkjapp/htkjapp/sendPhoneCode/${this._phone}/${this._code}`).subscribe((data: Result) => {
-      this.toast.show(data.msg);
+      this.toast.show(data.data);
       if (data.successed) {
         this.seconds = 5;
         this.counter();
       }
     })
-    this.http.get(`/iov/homePageCtrl/homepage_g6/1?timestamp=1596079300043?timestamp=1596079300043`).subscribe((data: Result) => {
-      this.toast.show(data.data);
-    })
   }
   login() {
-    this.router.navigate(['/tabs/home/index']);
     if (this.util.isNull(this.user.phone) || this.user.phone.length != 11) {
       this.toast.show('请填写正确的手机号');
       return;
@@ -59,8 +55,8 @@ export class LoginComponent implements OnInit {
       return;
     }
     if (this._phone == this.user.phone && this._code == this.user.code) {
-      this.http.get(`/r.json`).subscribe((data: Result) => {
-        this.toast.show(data.msg);
+      this.http.get(`/htkjapp/htkjapp/login/${this.user.phone}`).subscribe((data: Result) => {
+        this.toast.show(data.data);
         if (data.successed) {
           localStorage.setItem('access_token', data.data);
           this.securityService.getUser().subscribe((data: Result) => {
@@ -71,11 +67,11 @@ export class LoginComponent implements OnInit {
                   this.vehService.makeVeh(data.data);
                   this.router.navigate(['/tabs/home/index']);
                 } else {
-                  this.toast.show(data.msg);
+                  this.toast.show(data.data);
                 }
               });
             } else {
-              this.toast.show(data.msg);
+              this.toast.show(data.data);
             }
           });
         }
