@@ -7,7 +7,7 @@
     </ion-toolbar>
 </ion-header>
 <ion-content fullscreen="true">
-    <ion-segment (ionChange)="segmentChanged($event)" value="2">
+    <ion-segment (ionChange)="segmentChanged($event)" [value]="tag">
         <ion-segment-button value="1">
             <ion-label>基本数据</ion-label>
         </ion-segment-button>
@@ -18,7 +18,13 @@
             <ion-label>车速分析</ion-label>
         </ion-segment-button>
     </ion-segment>
-    <div #chart1 class="data-chart"></div>
-    <div #chart2 class="data-chart"></div>
-    <div #chart3 class="data-chart"></div>
+    <div [hidden]="tag!=1">
+        <div #chart1 class="data-chart"></div>
+    </div>
+    <div [hidden]="tag!=2">
+        <div #chart2 class="data-chart"></div>
+    </div>
+    <div [hidden]="tag!=3">
+        <div #chart3 class="data-chart"></div>
+    </div>
 </ion-content>
