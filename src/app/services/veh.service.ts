@@ -20,7 +20,7 @@ export class VehService {
   }
 
   getVeh(): Observable<Object> {
-    return this.http.get(`/veh.json`);
+    return this.http.get(`/htkjapp/htkjapp/getUserVehs`);
   }
 
   makeVeh(data: Array<any>): void {

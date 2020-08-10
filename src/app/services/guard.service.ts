@@ -16,9 +16,9 @@ export class GuardService implements CanActivate {
       this.router.navigate(['/security/login']);
       return false;
     }
-    let vehs = JSON.parse(localStorage.getItem('access_vehs'));
-    let veh = JSON.parse(localStorage.getItem('access_veh'));
-    if (this.util.isNull(vehs) || this.util.isNull(veh) || vehs.length == 0 || this.util.isNull(veh)) {
+    let vehs = localStorage.getItem('access_vehs');
+    let veh = localStorage.getItem('access_veh');
+    if (this.util.isNull(vehs) || this.util.isNull(veh) || JSON.parse(vehs).length == 0) {
       this.router.navigate(['/security/bind/0']);
       return false;
     }

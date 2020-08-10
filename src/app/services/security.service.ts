@@ -20,7 +20,7 @@ export class SecurityService {
   }
 
   getUser(): Observable<Object> {
-    return this.http.get(`/user.json`);
+    return this.http.get(`/htkjapp/htkjapp/getUserInfo`);
   }
 
   makeUser(data: any): void {

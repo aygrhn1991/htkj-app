@@ -19,41 +19,16 @@
     <ion-item-divider>
         <ion-label>已绑定车辆</ion-label>
     </ion-item-divider>
-    <ion-item>
+    <ion-item *ngFor="let d of dataList">
         <ion-label>
-            <ion-label>黑A12345</ion-label>
-            <ion-label class="bind-subtitle">ABCDEFGABCDEFGAAA</ion-label>
+            <ion-label>{{d.vno}}</ion-label>
+            <ion-label class="bind-subtitle">{{d.vin}}</ion-label>
         </ion-label>
-        <ion-button slot="end">
+        <ion-button slot="end" *ngIf="!d.select">
             <ion-icon name="repeat"></ion-icon>切换
         </ion-button>
         <ion-button slot="end">
             <ion-icon name="flash-off"></ion-icon>解绑
         </ion-button>
-    </ion-item>
-    <ion-item>
-        <ion-label>
-            <ion-label>
-                <ion-icon name="checkmark"></ion-icon>黑A12345
-            </ion-label>
-            <ion-label class="bind-subtitle">ABCDEFGABCDEFGAAA</ion-label>
-        </ion-label>
-        <ion-button slot="end">解绑</ion-button>
-    </ion-item>
-    <ion-item>
-        <ion-label>
-            <ion-label>黑A12345</ion-label>
-            <ion-label class="bind-subtitle">ABCDEFGABCDEFGAAA</ion-label>
-        </ion-label>
-        <ion-button slot="end">切换</ion-button>
-        <ion-button slot="end">解绑</ion-button>
-    </ion-item>
-    <ion-item>
-        <ion-label>
-            <ion-label>黑A12345</ion-label>
-            <ion-label class="bind-subtitle">ABCDEFGABCDEFGAAA</ion-label>
-        </ion-label>
-        <ion-button slot="end">切换</ion-button>
-        <ion-button slot="end">解绑</ion-button>
     </ion-item>
 </ion-content>
