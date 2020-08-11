@@ -153,4 +153,57 @@ export class ChartService {
     };
     return option;
   }
+  getMultipleLineChartOption(title: string, xName: string, yName: string, unit: string, legend: Array<string>, dataX: Array<any>, dataY: Array<any>) {
+    let series = [];
+    for (let i = 0; i < legend.length; i++) {
+      series.push({ name: legend[i], type: 'line', data: dataY[i] });
+    }
+    let option = {
+      color: this.colorList,
+      title: {
+        top: '5%',
+        left: 'center',
+        text: title,
+        textStyle: { color: '#fff', fontSize: 14 }
+      },
+      legend: {
+        top: '15%',
+        textStyle: { color: '#fff' },
+        data: legend
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: { type: 'line' },
+      },
+      grid: {
+        top: '30%',
+        left: '5%',
+        right: '12%',
+        bottom: '5%',
+        containLabel: true
+      },
+      xAxis: [{
+        type: 'category',
+        name: xName,
+        nameTextStyle: { color: '#fff' },
+        boundaryGap: false,
+        axisLabel: { color: '#fff' },
+        axisLine: { lineStyle: { color: this.colorAxis } },
+        axisTick: { show: false },
+        splitLine: { show: false },
+        data: dataX,
+      }],
+      yAxis: [{
+        type: 'value',
+        name: yName,
+        nameTextStyle: { color: '#fff' },
+        axisLabel: { color: '#fff' },
+        axisLine: { lineStyle: { color: this.colorAxis } },
+        axisTick: { show: false },
+        splitLine: { lineStyle: { color: this.colorAxis } }
+      }],
+      series: series
+    };
+    return option;
+  }
 }
