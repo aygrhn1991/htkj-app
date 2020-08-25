@@ -27,7 +27,7 @@
         <ion-button slot="end" *ngIf="!d.select">
             <ion-icon name="repeat"></ion-icon>切换
         </ion-button>
-        <ion-button slot="end">
+        <ion-button slot="end" (click)="unbind(d)">
             <ion-icon name="flash-off"></ion-icon>解绑
         </ion-button>
     </ion-item>

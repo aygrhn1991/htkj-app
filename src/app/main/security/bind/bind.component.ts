@@ -48,7 +48,7 @@ export class BindComponent implements OnInit {
       return;
     }
     this.http.get(`/htkjapp/htkjapp/bindVeh/${this.vin}`).subscribe((data: Result) => {
-      this.toast.show(data.data);
+      this.toast.show(data.msg);
       if (data.successed) {
         if (this.from == 0) {
           this.router.navigate(['/tabs/home/index']);
@@ -56,6 +56,13 @@ export class BindComponent implements OnInit {
           this.getData();
         }
       }
+    });
+  }
+  unbind(e) {
+    console.log(132);
+    this.http.get(`/htkjapp/htkjapp/unbindVeh/${e.vin}`).subscribe((data: Result) => {
+      this.toast.show(data.msg);
+      this.getData();
     });
   }
 

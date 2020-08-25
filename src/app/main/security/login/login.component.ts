@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
     this._phone = this.user.phone;
     this._code = this.util.getIntRandom(1000, 10000);
     this.http.get(`/htkjapp/htkjapp/sendPhoneCode/${this._phone}/${this._code}`).subscribe((data: Result) => {
-      this.toast.show(data.data);
+      this.toast.show(data.msg);
       if (data.successed) {
         this.seconds = 5;
         this.counter();
@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
     }
     if (this._phone == this.user.phone && this._code == this.user.code) {
       this.http.get(`/htkjapp/htkjapp/login/${this.user.phone}`).subscribe((data: Result) => {
-        this.toast.show(data.data);
+        this.toast.show(data.msg);
         if (data.successed) {
           localStorage.setItem('access_token', data.data);
           this.securityService.getUser().subscribe((data: Result) => {
@@ -67,11 +67,11 @@ export class LoginComponent implements OnInit {
                   this.vehService.makeVeh(data.data);
                   this.router.navigate(['/tabs/home/index']);
                 } else {
-                  this.toast.show(data.data);
+                  this.toast.show(data.msg);
                 }
               });
             } else {
-              this.toast.show(data.data);
+              this.toast.show(data.msg);
             }
           });
         }
@@ -92,4 +92,10 @@ export class LoginComponent implements OnInit {
     }
   }
 
+
+  test(){
+    this.http.get('https://wx2.fenglingtime.com/api/test/123').subscribe((data:any)=>{
+      this.toast.show(data.data);
+    })
+  }
 }

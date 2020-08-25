@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit {
     this._phone = this.user.phone;
     this._code = this.util.getIntRandom(1000, 10000);
     this.http.get(`/htkjapp/htkjapp/sendPhoneCode/${this._phone}/${this._code}`).subscribe((data: Result) => {
-      this.toast.show(data.data);
+      this.toast.show(data.msg);
       if (data.successed) {
         this.seconds = 5;
         this.counter();
@@ -59,7 +59,7 @@ export class RegisterComponent implements OnInit {
     }
     if (this._phone == this.user.phone && this._code == this.user.code) {
       this.http.get(`/htkjapp/htkjapp/register/${this.user.phone}`).subscribe((data: Result) => {
-        this.toast.show(data.data);
+        this.toast.show(data.msg);
         if (data.successed) {
           localStorage.setItem('access_token', data.data);
           this.securityService.getUser().subscribe((data: Result) => {
@@ -67,7 +67,7 @@ export class RegisterComponent implements OnInit {
               this.securityService.makeUser(data.data);
               this.router.navigate(['/security/bind/0']);
             } else {
-              this.toast.show(data.data);
+              this.toast.show(data.msg);
             }
           });
         }

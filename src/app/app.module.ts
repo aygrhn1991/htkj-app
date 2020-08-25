@@ -28,7 +28,10 @@ const routes: Routes = [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
+    // { provide: 'API_URL', useValue: 'http://www.chinavnu.com' },
+    // { provide: 'API_URL', useValue: 'http://192.168.40.17:10034' },
+    { provide: 'API_URL', useValue: 'http://113.0.51.228:57695' },
   ],
   bootstrap: [
     AppComponent

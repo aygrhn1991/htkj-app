@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { ToastService } from './toast.service';
 import { UtilService } from './util.service';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpResponse, HttpErrorResponse } from '@angular/common/http';
@@ -13,11 +13,12 @@ export class InterceptorService implements HttpInterceptor {
 
   constructor(private toast: ToastService,
     private util: UtilService,
-    private router: Router) { }
+    private router: Router,
+    @Inject('API_URL') private apiUrl) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     req = req.clone({
-      url: req.url + '?timestamp=' + new Date().getTime(),
+      url: this.apiUrl + req.url + '?timestamp=' + new Date().getTime(),
       headers: req.headers.set('access_token', this.util.parameterTransfer(localStorage.getItem('access_token'), ''))
     });
     return next.handle(req).pipe(

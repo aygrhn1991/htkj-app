@@ -3,7 +3,7 @@
         <div class="index-search">
             <ion-icon name="search" class="index-search-input-icon"></ion-icon>
             <input type="text" [(ngModel)]="key" placeholder="关键字">
-            <span class="index-search-input-btn">搜索</span>
+            <span class="index-search-input-btn" (click)="test()">搜索</span>
             <div class="index-search-message">
                 <ion-icon name="mail" routerLink="/tabs/user/message"></ion-icon>
                 <div></div>
@@ -12,7 +12,7 @@
     </div>
     <div class="index-part2">
         <div class="index-info">
-            <div class="index-info-hello">上午好！黑A12345</div>
+            <div class="index-info-hello">上午好！{{veh.vno}}</div>
             <div class="index-info-location">
                 <ion-icon name="location"></ion-icon>
                 黑龙江省哈尔滨市平房区哈平西路45号航天科技工业园
@@ -21,8 +21,8 @@
         <div class="index-weather">
             <img src="../../../../assets/img/weather/03.png">
             <div class="index-weather-text">多云转晴</div>
-            <div>20207年7月24日</div>
-            <div>星期五</div>
+            <div>{{date|date:'yyyy年MM月dd日'}}</div>
+            <div>{{week}}</div>
         </div>
     </div>
     <div class="index-part3">
@@ -31,7 +31,7 @@
                 <img src="../../../../assets/img/index-1.png">
             </div>
             <div class="index-block3-text">
-                <div>365<span>天</span></div>
+                <div>{{data.days}}<span>天</span></div>
                 <div>入网天数</div>
             </div>
         </div>
@@ -40,7 +40,7 @@
                 <img src="../../../../assets/img/index-2.png">
             </div>
             <div class="index-block3-text">
-                <div>365<span>天</span></div>
+                <div>{{data.tmil/data.days/1000|number:'0.0-1'}}<span>km</span></div>
                 <div>日均里程</div>
             </div>
         </div>
@@ -49,7 +49,7 @@
                 <img src="../../../../assets/img/index-3.png">
             </div>
             <div class="index-block3-text">
-                <div>365<span>天</span></div>
+                <div>{{data.rt_urea}}<span>%</span></div>
                 <div>反应剂余量</div>
             </div>
         </div>
@@ -58,22 +58,22 @@
                 <img src="../../../../assets/img/index-4.png">
             </div>
             <div class="index-block3-text">
-                <div>365<span>天</span></div>
+                <div>{{data.rt_oil}}<span>%</span></div>
                 <div>邮箱液位</div>
             </div>
         </div>
     </div>
     <div class="index-part4">
         <div class="index-block4">
-            <div class="index-block4-number">100000<span>km</span></div>
+            <div class="index-block4-number">{{data.tmil/1000|number:'0.0-1'}}<span>km</span></div>
             <div class="index-block4-text">总里程</div>
         </div>
         <div class="index-block4">
-            <div class="index-block4-number">100000<span>km</span></div>
+            <div class="index-block4-number">{{data.tut}}<span>h</span></div>
             <div class="index-block4-text">总时长</div>
         </div>
         <div class="index-block4">
-            <div class="index-block4-number">100000<span>km</span></div>
+            <div class="index-block4-number">{{data.toil}}<span>L</span></div>
             <div class="index-block4-text">总油耗</div>
         </div>
     </div>
