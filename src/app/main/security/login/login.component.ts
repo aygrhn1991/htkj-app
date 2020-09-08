@@ -92,10 +92,4 @@ export class LoginComponent implements OnInit {
     }
   }
 
-
-  test(){
-    this.http.get('https://wx2.fenglingtime.com/api/test/123').subscribe((data:any)=>{
-      this.toast.show(data.data);
-    })
-  }
 }

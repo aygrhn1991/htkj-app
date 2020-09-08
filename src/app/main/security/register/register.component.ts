@@ -44,7 +44,6 @@ export class RegisterComponent implements OnInit {
     })
   }
   register() {
-    console.log(this.user.agreement);
     if (!this.user.agreement) {
       this.toast.show('请阅读并同意《航天科技云终端用户服务协议》');
       return;

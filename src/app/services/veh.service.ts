@@ -32,7 +32,9 @@ export class VehService {
       return veh;
     });
     localStorage.setItem('access_vehs', JSON.stringify(vehList));
-    localStorage.setItem('access_veh', JSON.stringify(vehList[0]));
+    if (vehList.length != 0) {
+      localStorage.setItem('access_veh', JSON.stringify(vehList[0]));
+    }
   }
 
 }

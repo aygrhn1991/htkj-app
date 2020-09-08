@@ -13,35 +13,36 @@
     </div>
     <div class="doc">
         <div class="doc-block">
-            <div>车牌号码：</div>
-            <div>VIN：</div>
-            <div>车辆型号：</div>
-            <div>最大基准扭矩：</div>
-            <div>出厂日期：</div>
-            <div>主机厂：</div>
+            <div>车牌号码：{{data.c_vehno}}</div>
+            <div>VIN：{{data.c_vin}}</div>
+            <div>车辆型号：{{data.c_vehm}}</div>
+            <div>最大基准扭矩：{{data.c_turque}}</div>
+            <div>出厂日期：{{data.c_ftm|date:'yyyy-MM-dd'}}</div>
+            <div>主机厂：{{data.c_name}}</div>
         </div>
         <div class="doc-block">
-            <div>总里程：</div>
-            <div>总时长：</div>
-            <div>总油耗：</div>
-            <div>总排放：</div>
-            <div>故障报警：</div>
-            <div>总数据量：</div>
+            <div>总里程：{{data.mil}}</div>
+            <div>总时长：{{data.ut}}</div>
+            <div>总油耗：{{data.oil}}</div>
+            <div>总排放：{{data.nox}}</div>
+            <div>故障报警：{{data.dtcnum}}</div>
+            <div>总数据量：{{data.datanum}}</div>
         </div>
         <div class="doc-block">
-            <div>发动机型号：</div>
-            <div>发动机编号：</div>
-            <div>终端型号：</div>
-            <div>终端编号：</div>
+            <div>发动机型号：{{data.aaaaaaaaaa}}</div>
+            <div>发动机编号：{{data.c_engcode}}</div>
+            <div>终端型号：{{data.aaaaaaaaaa}}</div>
+            <div>终端编号：{{data.c_dtucode}}</div>
+            <div>ICCID：{{data.c_imsi}}</div>
         </div>
         <div class="doc-block">
-            <div>历史最高时速：</div>
-            <div>单日最大里程：</div>
-            <div>单日最长在线时间：</div>
-            <div>单日最高油耗：</div>
-            <div>单日最高排放：</div>
-            <div>单日最高故障：</div>
-            <div>单日最多数据：</div>
+            <div>历史最高时速：{{data.maxspd}}</div>
+            <div>单日最大里程：{{data.maxmil}}</div>
+            <div>单日最长在线时间：{{data.maxtime}}</div>
+            <div>单日最高油耗：{{data.maxoil}}</div>
+            <div>单日最高排放：{{data.maxnox}}</div>
+            <div>单日最大故障数：{{data.maxdtc}}</div>
+            <div>单日最大数据上传量：{{data.maxnum}}</div>
         </div>
     </div>
 </ion-content>

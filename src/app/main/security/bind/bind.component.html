@@ -24,10 +24,10 @@
             <ion-label>{{d.vno}}</ion-label>
             <ion-label class="bind-subtitle">{{d.vin}}</ion-label>
         </ion-label>
-        <ion-button slot="end" *ngIf="!d.select">
+        <ion-button slot="end" *ngIf="!d.select" (click)="changeBind(d)">
             <ion-icon name="repeat"></ion-icon>切换
         </ion-button>
-        <ion-button slot="end" (click)="unbind(d)">
+        <ion-button slot="end" (click)="unBind(d)">
             <ion-icon name="flash-off"></ion-icon>解绑
         </ion-button>
     </ion-item>
