@@ -17,9 +17,6 @@ export class DocComponent implements OnInit {
       this.data = data.data;
       console.log(data.data);
     });
-    this.http.get(`/htkjapp/htkjapp/statCtrl/getFaultData/10000042/2`).subscribe((data: Result) => {
-      console.log(data.data);
-    });
   }
 
 }

@@ -1,3 +1,16 @@
-<p>
-  alarm works!
-</p>
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text=""></ion-back-button>
+        </ion-buttons>
+        <ion-title>故障报警</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true">
+    <div class="alarm" *ngFor="let d of dataList">
+        <div class="alarm-tip">故障</div>
+        <div>故障名称：{{d.c_ybname}}</div>
+        <div>故障代码：{{d.c_code}}</div>
+        <div>发生时间：{{d.c_attm|date:'yyyy-MM-dd HH:mm:ss'}}</div>
+    </div>
+</ion-content>

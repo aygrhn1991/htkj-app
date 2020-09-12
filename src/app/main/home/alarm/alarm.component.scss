@@ -1,0 +1,22 @@
+.alarm {
+    position: relative;
+    margin: 20px;
+    padding: 10px 20px;
+    border: 1px solid var(--root-border-color);
+    border-radius: 5px;
+    line-height: 30px;
+    background: #031E47;
+    overflow: hidden;
+}
+
+.alarm-tip {
+    position: absolute;
+    right: -30px;
+    width: 100px;
+    background: red;
+    color: #fff;
+    text-align: center;
+    line-height: initial;
+    transform: rotate(45deg);
+    font-size: 12px;
+}

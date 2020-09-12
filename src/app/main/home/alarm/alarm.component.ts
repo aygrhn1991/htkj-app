@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Result } from 'src/app/models/result.model';
 
 @Component({
   selector: 'app-alarm',
@@ -7,8 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlarmComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    let veh = JSON.parse(localStorage.getItem('access_veh'));
+    this.http.get(`/htkjapp/htkjapp/statCtrl/getFaultData/10000042/2`).subscribe((data: Result) => {
+      this.dataList = data.data;
+      console.log(this.dataList)
+    });
+  }
+
+  dataList: Array<any> = [];
 
 }

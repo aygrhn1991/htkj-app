@@ -7,13 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { BlankComponent } from 'src/app/modules/blank/blank.component';
 import { DataComponent } from './data/data.component';
+import { AlarmComponent } from './alarm/alarm.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'index' },
   { path: 'index', component: IndexComponent, },
   { path: 'doc', component: DocComponent, },
   { path: 'data', component: DataComponent, },
-  { path: 'alarm', component: BlankComponent, },
+  { path: 'alarm', component: AlarmComponent, },
   { path: 'repair', component: BlankComponent, },
   { path: 'regulation', component: BlankComponent, },
   { path: 'forum', component: BlankComponent, },
@@ -27,6 +28,7 @@ const routes: Routes = [
     IndexComponent,
     DocComponent,
     DataComponent,
+    AlarmComponent,
   ],
   imports: [
     IonicModule,

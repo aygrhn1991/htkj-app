@@ -53,7 +53,6 @@ export class DataComponent implements OnInit {
 
   selectTab(e) {
     this.tab = e.detail.value;
-
     this.getData();
   }
   selectTime(e) {
