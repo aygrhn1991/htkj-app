@@ -12,18 +12,19 @@ import { UtilService } from 'src/app/services/util.service';
 export class IndexComponent implements OnInit {
 
   constructor(private http: HttpClient,
-    private util:UtilService) { }
+    private util: UtilService) { }
 
   veh: VehModel = new VehModel();
-  date:Date=new Date();
-  week:string=null;
+  time: string = null;
+  date: Date = new Date();
+  week: string = null;
   ngOnInit() {
-    let veh = JSON.parse(localStorage.getItem('access_veh'));
-    this.http.get(`/htkjapp/htkjapp/statCtrl/getHomeData/${veh.vid}`).subscribe((data: Result) => {
+    this.veh = JSON.parse(localStorage.getItem('access_veh'));
+    this.time = new Date().getHours() < 12 ? '上午好' : '下午好';
+    this.week = this.util.dateToWeekday(new Date());
+    this.http.get(`/htkjapp/htkjapp/statCtrl/getHomeData/${this.veh.vid}`).subscribe((data: Result) => {
       this.data = data.data;
     });
-    this.veh = JSON.parse(localStorage.getItem('access_veh'));
-    this.week=this.util.dateToWeekday(new Date());
   }
 
   data: any = {};
