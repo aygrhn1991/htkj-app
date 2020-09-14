@@ -13,7 +13,8 @@ export class DocComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get(`/htkjapp/htkjapp/statCtrl/getVehData/10000042/1`).subscribe((data: Result) => {
+    let veh = JSON.parse(localStorage.getItem('access_veh'));
+    this.http.get(`/htkjapp/htkjapp/statCtrl/getVehData/${veh.vid}/1`).subscribe((data: Result) => {
       this.data = data.data;
       console.log(data.data);
     });

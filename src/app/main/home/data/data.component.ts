@@ -17,7 +17,8 @@ export class DataComponent implements OnInit {
     private http: HttpClient) { }
 
   ngOnInit() {
-    this.search.vid = 10000042;
+    let veh = JSON.parse(localStorage.getItem('access_veh'));
+    this.search.vid = veh.vid;
     this.getData();
   }
 

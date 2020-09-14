@@ -18,7 +18,8 @@ export class IndexComponent implements OnInit {
   date:Date=new Date();
   week:string=null;
   ngOnInit() {
-    this.http.get(`/htkjapp/htkjapp/statCtrl/getHomeData/10000042`).subscribe((data: Result) => {
+    let veh = JSON.parse(localStorage.getItem('access_veh'));
+    this.http.get(`/htkjapp/htkjapp/statCtrl/getHomeData/${veh.vid}`).subscribe((data: Result) => {
       this.data = data.data;
     });
     this.veh = JSON.parse(localStorage.getItem('access_veh'));
@@ -27,11 +28,5 @@ export class IndexComponent implements OnInit {
 
   data: any = {};
   key: string = null;
-
-  test() {
-    this.http.get(`/htkjapp/htkjapp/statCtrl/getHomeData/10000042`).subscribe((data: Result) => {
-      console.log(data.data);
-    });
-  }
 
 }

@@ -13,7 +13,7 @@ export class AlarmComponent implements OnInit {
 
   ngOnInit() {
     let veh = JSON.parse(localStorage.getItem('access_veh'));
-    this.http.get(`/htkjapp/htkjapp/statCtrl/getFaultData/10000042/2`).subscribe((data: Result) => {
+    this.http.get(`/htkjapp/htkjapp/statCtrl/getFaultData/${veh.vid}/2`).subscribe((data: Result) => {
       this.dataList = data.data;
       console.log(this.dataList)
     });
