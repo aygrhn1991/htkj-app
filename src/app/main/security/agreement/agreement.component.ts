@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgreementComponent implements OnInit {
 
+  ionViewWillEnter() {
+    this.ngOnInit();
+  }
+
   constructor() { }
 
   ngOnInit() {}

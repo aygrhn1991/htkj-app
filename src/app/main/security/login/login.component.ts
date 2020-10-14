@@ -15,11 +15,9 @@ import { VehService } from 'src/app/services/veh.service';
 })
 export class LoginComponent implements OnInit {
 
-  user: UserModel = new UserModel();
-  _phone: string = null;
-  _code: number = null;
-  seconds: number = 0;
-  secondsMsg: string = '';
+  ionViewWillEnter() {
+    this.ngOnInit();
+  }
 
   constructor(private router: Router,
     private util: UtilService,
@@ -29,6 +27,12 @@ export class LoginComponent implements OnInit {
     private vehService: VehService) { }
 
   ngOnInit() { }
+
+  user: UserModel = new UserModel();
+  _phone: string = null;
+  _code: number = null;
+  seconds: number = 0;
+  secondsMsg: string = '';
 
   sendPhoneCode() {
     if (this.util.isNull(this.user.phone) || this.user.phone.length != 11) {

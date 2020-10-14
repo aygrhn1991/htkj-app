@@ -14,6 +14,10 @@ import { VehService } from 'src/app/services/veh.service';
 })
 export class BindComponent implements OnInit {
 
+  ionViewWillEnter() {
+    this.ngOnInit();
+  }
+
   constructor(private util: UtilService,
     private toast: ToastService,
     private http: HttpClient,
@@ -23,18 +27,18 @@ export class BindComponent implements OnInit {
 
   ngOnInit(): void {
     this.from = this.route.snapshot.params['from'];
-    this.getData();
+    this.transferData();
   }
 
   from: number = 0;//来源：0注册进入需绑定完成需跳转首页，1功能菜单进入绑定完成界面不动
   vin: string = null;
   dataList: Array<VehModel> = [];
 
-  getData() {
+  transferData() {
     let vehsJson = localStorage.getItem('access_vehs');
     let vehJson = localStorage.getItem('access_veh');
     if (!this.util.isNull(vehsJson) && !this.util.isNull(vehJson)) {
-      this.dataList = JSON.parse(localStorage.getItem('access_vehs'));
+      this.dataList = JSON.parse(vehsJson);
       let veh = JSON.parse(vehJson);
       this.dataList.forEach(x => {
         if (x.vid == veh.vid) {
@@ -56,7 +60,7 @@ export class BindComponent implements OnInit {
       if (data.successed) {
         this.vehService.getVeh().subscribe((data: Result) => {
           this.vehService.makeVeh(data.data);
-          this.getData();
+          this.transferData();
           if (this.from == 0) {
             this.router.navigate(['/tabs/home/index']);
           }
@@ -70,7 +74,7 @@ export class BindComponent implements OnInit {
       if (data.successed) {
         this.vehService.getVeh().subscribe((data: Result) => {
           this.vehService.makeVeh(data.data);
-          this.getData();
+          this.transferData();
         });
       }
     });
@@ -81,7 +85,7 @@ export class BindComponent implements OnInit {
         localStorage.setItem('access_veh', JSON.stringify(e));
       }
     })
-    this.getData();
+    this.transferData();
   }
 
 }

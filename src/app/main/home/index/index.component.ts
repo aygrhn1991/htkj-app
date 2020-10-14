@@ -11,6 +11,10 @@ import { UtilService } from 'src/app/services/util.service';
 })
 export class IndexComponent implements OnInit {
 
+  ionViewWillEnter() {
+    this.ngOnInit();
+  }
+
   constructor(private http: HttpClient,
     private util: UtilService) { }
 
@@ -29,5 +33,7 @@ export class IndexComponent implements OnInit {
 
   data: any = {};
   key: string = null;
+
+
 
 }

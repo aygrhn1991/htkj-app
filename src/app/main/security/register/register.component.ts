@@ -14,11 +14,9 @@ import { Result } from 'src/app/models/result.model';
 })
 export class RegisterComponent implements OnInit {
 
-  user: UserModel = new UserModel();
-  _phone: string = null;
-  _code: number = null;
-  seconds: number = 0;
-  secondsMsg: string = '';
+  ionViewWillEnter() {
+    this.ngOnInit();
+  }
 
   constructor(private router: Router,
     private util: UtilService,
@@ -27,6 +25,12 @@ export class RegisterComponent implements OnInit {
     private securityService: SecurityService) { }
 
   ngOnInit() { }
+
+  user: UserModel = new UserModel();
+  _phone: string = null;
+  _code: number = null;
+  seconds: number = 0;
+  secondsMsg: string = '';
 
   sendPhoneCode() {
     if (this.util.isNull(this.user.phone) || this.user.phone.length != 11) {
