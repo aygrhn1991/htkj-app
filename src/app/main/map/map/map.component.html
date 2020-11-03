@@ -8,8 +8,17 @@
 </ion-header>
 <ion-content fullscreen="true">
     <div #map class="map"></div>
+    <div class="map-btn map-btn-back" (click)="goBack()">
+        <ion-icon name="navigate"></ion-icon>
+    </div>
+    <div class="map-btn map-btn-big" (click)="big()">
+        <ion-icon name="add"></ion-icon>
+    </div>
+    <div class="map-btn map-btn-small" (click)="small()">
+        <ion-icon name="remove"></ion-icon>
+    </div>
     <div class="map-list">
-        <div class="map-list-title">附近服务站{{lng+','+lat}}</div>
+        <div class="map-list-title">附近服务站</div>
         <div class="map-item" *ngFor="let data of list">
             <div class="map-img">
                 <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=138199696,3331713252&fm=26&gp=0.jpg">

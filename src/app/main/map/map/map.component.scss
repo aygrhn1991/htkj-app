@@ -1,11 +1,34 @@
 .map {
     width: 100%;
-    height: 200px;
+    height: 300px;
+}
+
+.map-btn {
+    position: absolute;
+    top: 306px;
+    width: 30px;
+    line-height: 30px;
+    background: var(--root-component-background-color);
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.map-btn-back {
+    left: 10px;
+}
+
+.map-btn-big {
+    right: 50px;
+}
+
+.map-btn-small {
+    right: 10px;
 }
 
 .map-list {
     position: absolute;
-    top: 256px;
+    top: 356px;
     left: 0;
     right: 0;
     bottom: 0;

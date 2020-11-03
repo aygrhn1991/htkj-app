@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from './services/interceptor.service';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 const routes: Routes = [
   { path: '', loadChildren: () => import('./main/tabs/tabs.module').then(m => m.TabsPageModule) },
@@ -27,6 +28,7 @@ const routes: Routes = [
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
     // { provide: 'API_URL', useValue: 'http://www.chinavnu.com' },
