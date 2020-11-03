@@ -7,5 +7,32 @@
     </ion-toolbar>
 </ion-header>
 <ion-content fullscreen="true">
-    <div #map style="width:100%;height:100%;"></div>
+    <div #map class="map"></div>
+    <div class="map-list">
+        <div class="map-list-title">附近服务站{{lng+','+lat}}</div>
+        <div class="map-item" *ngFor="let data of list">
+            <div class="map-img">
+                <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=138199696,3331713252&fm=26&gp=0.jpg">
+            </div>
+            <div class="map-content">
+                <div class="map-title">测试测试测试测试测试{{data}}</div>
+                <div class="map-score">
+                    <div class="map-stars-left">健康指数：</div>
+                    <div class="map-stars">
+                        <div class="map-stars-bg-back"></div>
+                        <div class="map-stars-bg-front"></div>
+                        <img src="../../../../assets/img/star.png">
+                        <img src="../../../../assets/img/star.png">
+                        <img src="../../../../assets/img/star.png">
+                        <img src="../../../../assets/img/star.png">
+                        <img src="../../../../assets/img/star.png">
+                    </div>
+                    <div class="map-stars-right">1.2分</div>
+                </div>
+                <div class="map-info">
+                    故障预测：哈哈哈哈哈哈<span>1.2km</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </ion-content>

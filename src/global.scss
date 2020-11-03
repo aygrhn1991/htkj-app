@@ -31,6 +31,7 @@
 :root {
     --root-border-color: #1566bb;
     --root-background-color: #00032C;
+    --root-component-background-color: #031E47;
     --root-jb: linear-gradient(to bottom, #00528F, #00052E);
 }
 
@@ -133,7 +134,7 @@ ion-button {
 }
 
 ion-segment {
-    --background: #031E47;
+    --background: var(--root-component-background-color);
 }
 
 ion-segment-button {
