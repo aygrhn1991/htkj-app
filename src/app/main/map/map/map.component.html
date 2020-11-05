@@ -3,7 +3,7 @@
         <ion-buttons slot="start">
             <ion-back-button text=""></ion-back-button>
         </ion-buttons>
-        <ion-title>地图监控</ion-title>
+        <ion-title>服务站</ion-title>
     </ion-toolbar>
 </ion-header>
 <ion-content fullscreen="true">
@@ -17,19 +17,23 @@
     <div class="map-btn map-btn-small" (click)="small()">
         <ion-icon name="remove"></ion-icon>
     </div>
+    <div class="map-list-title">
+        附近服务站：{{dataTotal}}家
+        <span routerLink="/tabs/map/order/3">意向订单报价</span>
+        <span routerLink="/tabs/map/order/2">发布意向订单</span>
+    </div>
     <div class="map-list">
-        <div class="map-list-title">附近服务站</div>
-        <div class="map-item" *ngFor="let data of list">
+        <div class="map-item" *ngFor="let data of dataList" routerLink="/tabs/map/order/1">
             <div class="map-img">
                 <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=138199696,3331713252&fm=26&gp=0.jpg">
             </div>
             <div class="map-content">
-                <div class="map-title">测试测试测试测试测试{{data}}</div>
+                <div class="map-title">{{data.c_id}}</div>
                 <div class="map-score">
-                    <div class="map-stars-left">健康指数：</div>
+                    <div class="map-stars-left">服务评分：</div>
                     <div class="map-stars">
                         <div class="map-stars-bg-back"></div>
-                        <div class="map-stars-bg-front"></div>
+                        <div class="map-stars-bg-front" [ngStyle]="{'right':data.c_vst+'%'}"></div>
                         <img src="../../../../assets/img/star.png">
                         <img src="../../../../assets/img/star.png">
                         <img src="../../../../assets/img/star.png">
@@ -39,7 +43,7 @@
                     <div class="map-stars-right">1.2分</div>
                 </div>
                 <div class="map-info">
-                    故障预测：哈哈哈哈哈哈<span>1.2km</span>
+                    站内特色：哈哈哈哈哈哈<span>1.2km</span>
                 </div>
             </div>
         </div>

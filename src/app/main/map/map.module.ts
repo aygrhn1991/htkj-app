@@ -5,16 +5,19 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { BlankComponent } from 'src/app/modules/blank/blank.component';
+import { OrderComponent } from './order/order.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'index' },
-  { path: 'index', component: MapComponent, },
+  { path: '', redirectTo: 'map' },
+  { path: 'map', component: MapComponent, },
+  { path: 'order/:to', component: OrderComponent, },
 ];
 
 @NgModule({
   declarations: [
     BlankComponent,
     MapComponent,
+    OrderComponent
   ],
   imports: [
     IonicModule,
