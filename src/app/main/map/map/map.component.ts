@@ -17,7 +17,7 @@ export class MapComponent implements OnInit {
   dataList: Array<any>;
   shopList: Array<any> = [
     { name: '鸿宇汽配', score: this.util.getIntRandom(35, 50) / 10, mile: this.util.getIntRandom(0, 50) / 10, img: 1, item: '24小时营业' },
-    { name: '宏盛汽配（进乡街店）', score: this.util.getIntRandom(35, 50) / 10, mile: this.util.getIntRandom(0, 50) / 10, img: 2, item: '原厂配件，免费洗车' },
+    { name: '宏盛汽配（进乡街店）', score: this.util.getIntRandom(35, 50) / 10, mile: this.util.getIntRandom(0, 50) / 10, img: 2, item: '原厂配件' },
     { name: '远洋汽配', score: this.util.getIntRandom(35, 50) / 10, mile: this.util.getIntRandom(0, 50) / 10, img: 3, item: '1年售后' },
     { name: '金杰汽配商行', score: this.util.getIntRandom(35, 50) / 10, mile: this.util.getIntRandom(0, 50) / 10, img: 4, item: '7天零部件包换' },
     { name: '菲鸣汽车电器', score: this.util.getIntRandom(35, 50) / 10, mile: this.util.getIntRandom(0, 50) / 10, img: 5, item: '免收工时费' },
