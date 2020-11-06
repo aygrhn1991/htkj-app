@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text=""></ion-back-button>
+        </ion-buttons>
+        <ion-title>意向订单报价</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true">
+    <div class="intentionorder-header">
+        <div class="intentionorder-header-title">为车辆<span>黑A94S12(解放J6L)</span>发布的维保订单</div>
+        <div>共17家服务站报价</div>
+        <ion-select cancelText="取消" okText="确定" value="1">
+            <ion-select-option value="1">按价格排序</ion-select-option>
+            <ion-select-option value="2">按距离排序</ion-select-option>
+        </ion-select>
+    </div>
+    <div class="map-list">
+        <div class="map-item" *ngFor="let data of dataList" routerLink="/tabs/map/order/1">
+            <div class="map-content">
+                <div class="intentionorder-money">￥{{data.money}}.<small>00</small></div>
+                <a class="intentionorder-phone" href="tel:15645100192">
+                    <ion-icon name="call"></ion-icon>电话
+                </a>
+                <div class="intentionorder-goto" *ngIf="data.goto">去过1次</div>
+                <div>{{data.name}}&nbsp;&nbsp;<small>{{data.mile}}km</small></div>
+                <div class="map-score">
+                    <div class="map-stars">
+                        <div class="map-stars-bg-back"></div>
+                        <div class="map-stars-bg-front" [ngStyle]="{'right':(100-data.score/5*100)+'%'}"></div>
+                        <img src="../../../../assets/img/star.png">
+                        <img src="../../../../assets/img/star.png">
+                        <img src="../../../../assets/img/star.png">
+                        <img src="../../../../assets/img/star.png">
+                        <img src="../../../../assets/img/star.png">
+                    </div>
+                    <div class="map-stars-right">{{data.score}}分</div>
+                </div>
+                <div style="font-size:12px;">{{data.address}}</div>
+                <div style="font-size:12px;">{{data.time}}</div>
+            </div>
+        </div>
+    </div>
+</ion-content>

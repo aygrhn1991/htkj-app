@@ -6,18 +6,21 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { BlankComponent } from 'src/app/modules/blank/blank.component';
 import { OrderComponent } from './order/order.component';
+import { IntentionOrderComponent } from './intention-order/intention-order.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'map' },
   { path: 'map', component: MapComponent, },
   { path: 'order/:to', component: OrderComponent, },
+  { path: 'intention-order', component: IntentionOrderComponent, },
 ];
 
 @NgModule({
   declarations: [
     BlankComponent,
     MapComponent,
-    OrderComponent
+    OrderComponent,
+    IntentionOrderComponent
   ],
   imports: [
     IonicModule,

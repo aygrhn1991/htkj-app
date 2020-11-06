@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-order',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderComponent implements OnInit {
 
-  constructor() { }
+  to: number;
 
-  ngOnInit() {}
+  constructor(private route: ActivatedRoute) { }
+
+  ngOnInit() {
+    this.to = parseInt(this.route.snapshot.params['to']);
+  }
 
 }

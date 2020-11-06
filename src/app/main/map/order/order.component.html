@@ -3,13 +3,61 @@
         <ion-buttons slot="start">
             <ion-back-button text=""></ion-back-button>
         </ion-buttons>
-        <ion-title>订单中心</ion-title>
+        <ion-title>订单发布</ion-title>
     </ion-toolbar>
 </ion-header>
 <ion-content fullscreen="true">
-    <div class="order-tab">
-        <div class="order-tab-item">测试</div>
-        <div class="order-tab-item">测试</div>
-        <div class="order-tab-item">测试</div>
+    <div class="order-header" *ngIf="to==1">
+        <div class="order-header-title">为车辆<span>黑A94S12(解放J6L)</span>发布维保订单</div>
+        <div>
+            <ion-icon name="business"></ion-icon>
+            宏宇汽车维修中心
+        </div>
+        <div class="map-score">
+            <div class="map-stars">
+                <div class="map-stars-bg-back"></div>
+                <div class="map-stars-bg-front" [ngStyle]="{'right':'30%'}"></div>
+                <img src="../../../../assets/img/star.png">
+                <img src="../../../../assets/img/star.png">
+                <img src="../../../../assets/img/star.png">
+                <img src="../../../../assets/img/star.png">
+                <img src="../../../../assets/img/star.png">
+            </div>
+            <div class="map-stars-right">1.2分</div>
+        </div>
+        <div style="font-size:12px;">黑龙江省哈尔滨市南岗区征仪路12号</div>
+        <div style="font-size:12px;">
+            距您1.53km
+            <ion-icon style="font-size:16px;position:relative;top:3px;" name="navigate-circle"></ion-icon>
+        </div>
     </div>
+    <div class="order-header" *ngIf="to==2">
+        <div class="order-header-title">为车辆<span>黑A94S12(解放J6L)</span>发布维保订单</div>
+        <div>
+            <ion-icon name="location" style="position:relative;top:2px;"></ion-icon>南岗区
+        </div>
+        <div style="font-size:12px;">共68个服务站</div>
+    </div>
+    <div class="order-content">
+        <div class="order-item">车辆型号：解放J6L 4x2</div>
+        <div class="order-item">到店时间：
+            <ion-datetime displayFormat="YYYY-MM-DD" min="2020-11-01" max="2030-12-31" value="2020-11-06" cancelText="取消" doneText="确定"></ion-datetime>
+        </div>
+        <div class="order-item">维保项目：
+            <ion-select multiple="true" cancelText="取消" okText="确定" value="4">
+                <ion-select-option value="1">怠速运转不良</ion-select-option>
+                <ion-select-option value="2">燃油消耗过高</ion-select-option>
+                <ion-select-option value="3">润滑油消耗过高</ion-select-option>
+                <ion-select-option value="4">排气管冒烟异常</ion-select-option>
+                <ion-select-option value="5">加速无力即动力性差</ion-select-option>
+                <ion-select-option value="6">渗油</ion-select-option>
+                <ion-select-option value="7">漏水</ion-select-option>
+                <ion-select-option value="8">离合器故障</ion-select-option>
+                <ion-select-option value="9">传动轴故障</ion-select-option>
+                <ion-select-option value="10">转向跑偏</ion-select-option>
+            </ion-select>
+        </div>
+        <div class="order-item">问题描述：<input type="text" value="排烟有烧焦气味"></div>
+    </div>
+    <div class="order-submit">发布订单</div>
 </ion-content>

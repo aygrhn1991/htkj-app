@@ -17,33 +17,33 @@
     <div class="map-btn map-btn-small" (click)="small()">
         <ion-icon name="remove"></ion-icon>
     </div>
-    <div class="map-list-title">
+    <div class="map-title">
         附近服务站：{{dataTotal}}家
-        <span routerLink="/tabs/map/order/3">意向订单报价</span>
+        <span routerLink="/tabs/map/intention-order">意向订单报价</span>
         <span routerLink="/tabs/map/order/2">发布意向订单</span>
     </div>
     <div class="map-list">
-        <div class="map-item" *ngFor="let data of dataList" routerLink="/tabs/map/order/1">
+        <div class="map-item" *ngFor="let data of shopList" routerLink="/tabs/map/order/1">
             <div class="map-img">
-                <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=138199696,3331713252&fm=26&gp=0.jpg">
+                <img src="../../../../assets/shop/{{data.img}}.jpg">
             </div>
             <div class="map-content">
-                <div class="map-title">{{data.c_id}}</div>
+                <div>{{data.name}}</div>
                 <div class="map-score">
                     <div class="map-stars-left">服务评分：</div>
                     <div class="map-stars">
                         <div class="map-stars-bg-back"></div>
-                        <div class="map-stars-bg-front" [ngStyle]="{'right':data.c_vst+'%'}"></div>
+                        <div class="map-stars-bg-front" [ngStyle]="{'right':(100-data.score/5*100)+'%'}"></div>
                         <img src="../../../../assets/img/star.png">
                         <img src="../../../../assets/img/star.png">
                         <img src="../../../../assets/img/star.png">
                         <img src="../../../../assets/img/star.png">
                         <img src="../../../../assets/img/star.png">
                     </div>
-                    <div class="map-stars-right">1.2分</div>
+                    <div class="map-stars-right">{{data.score}}分</div>
                 </div>
                 <div class="map-info">
-                    站内特色：哈哈哈哈哈哈<span>1.2km</span>
+                    站内特色：{{data.item}}<span>{{data.mile}}km</span>
                 </div>
             </div>
         </div>
